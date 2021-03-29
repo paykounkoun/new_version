@@ -148,10 +148,16 @@ class NewVersion {
       this.dialogText ??
           'You can now update this app from ${versionStatus.localVersion} to ${versionStatus.storeVersion}',
     );
-    final dismissText = Text(this.dismissText);
+    final dismissText = Text(
+      this.dismissText,
+      style: TextStyle(color: Theme.of(context).colorScheme.primaryVariant),
+    );
     final dismissAction = this.dismissAction ??
         () => Navigator.of(context, rootNavigator: true).pop();
-    final updateText = Text(this.updateText);
+    final updateText = Text(
+      this.updateText,
+      style: TextStyle(color: Theme.of(context).colorScheme.primaryVariant),
+    );
     final updateAction = () {
       _launchAppStore(versionStatus.appStoreLink);
       Navigator.of(context, rootNavigator: true).pop();
